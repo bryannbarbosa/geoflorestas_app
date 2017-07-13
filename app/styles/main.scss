@@ -1,0 +1,16 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+img.decoration {
+  border: 8px solid #f5f5f5;
+}
+
+i.icon {
+  vertical-align: middle;
+}
+
+.heart {
+  color: #f44336;
+}

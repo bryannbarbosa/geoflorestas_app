@@ -1,0 +1,7 @@
+<div class="row" ng-repeat="shot in shots">
+  <div class="text-center">
+    <h1>{{ shot.title }}</h1>
+    <h4><i class="material-icons icon heart">favorite</i> <b>{{ shot.likes_count }}</b></h4>
+    <img class="decoration" ng-src="{{ shot.images.hidpi }}">
+  </div>
+</div>
