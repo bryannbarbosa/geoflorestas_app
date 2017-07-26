@@ -1,7 +1,22 @@
-<div class="row" ng-repeat="shot in shots">
-  <div class="text-center">
-    <h1>{{ shot.title }}</h1>
-    <h4><i class="material-icons icon heart">favorite</i> <b>{{ shot.likes_count }}</b></h4>
-    <img class="decoration" ng-src="{{ shot.images.hidpi }}">
+<div class="text-center">
+  <h1>Comparação de venda de pizzas</h1>
+  <a href="/cadastro" class="btn btn-primary">Registrar usuário</a>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <hr/>
+    <canvas id="line" class="chart chart-line" chart-data="data"
+    chart-labels="labels" chart-series="series" chart-options="options"
+    chart-dataset-override="datasetOverride" chart-click="onClick">
+   </canvas>
+   <canvas id="bar" class="chart chart-bar"
+  chart-data="data" chart-labels="labels" chart-series="series"> 
+  </canvas>
+  <canvas id="doughnut" class="chart chart-doughnut"
+  chart-data="pizza" chart-labels="pizzarias">
+  </canvas>
+  <canvas id="base" class="chart-horizontal-bar"
+  chart-data="data"  chart-series="series" chart-labels="labels" >
+  </canvas>
   </div>
 </div>

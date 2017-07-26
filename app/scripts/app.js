@@ -16,17 +16,23 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngResource'
+    'ngResource',
+    'chart.js',
+    'ui.mask',
+    'ngMap'
   ])
-  .config(function ($routeProvider, $locationProvider, $httpProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
-    var accessToken = 'YOUR_CLIENT_ACCESS_TOKEN';
-    $httpProvider.defaults.headers.common.Authorization = 'Bearer ' + accessToken;
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
+      })
+      .when('/cadastro', {
+        templateUrl: 'views/signupctrl.html',
+        controller: 'SignupctrlCtrl',
+        controllerAs: 'signupCtrl'
       })
       .otherwise({
         redirectTo: '/'

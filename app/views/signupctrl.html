@@ -1,0 +1,29 @@
+<div class="row">
+  <h1 class="text-center">Cadastro de usuário</h1>
+  <div class="col-md-4 col-md-offset-4 text-center">
+    <form name="cadastro">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="user.name" placeholder="Seu nome" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="user.address" placeholder="Endereço" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="user.cpf" ui-mask-placeholder ui-mask="999.999.999-99" placeholder="Seu CPF" required>
+    </div>
+    <div class="form-group">
+      <ng-map center="[{{ user.address !== undefined && user.address.length > 5 ? user.address : 'São José dos Campos' }}]"></ng-map>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" ng-click="addUser(user)" ng-disabled="!cadastro.$valid">Criar conta</button>
+    </div>
+    </form>
+    <h1>Usuários Cadastrados</h1>
+    <div ng-repeat="user in users">
+      <p>Nome: {{ user.name }}</p>
+      <p>Endereço: {{ user.address }}</p>
+      <p>CPF: {{ user.cpf }}</p>
+      <hr/>
+    </div>
+  </div>
+</div>
